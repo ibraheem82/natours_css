@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Flex -> BOX</title>
+</head>
+<style>
+    #container{
+        display: flex;
+        /* flex-direction: row; */
+        /* flex-direction: column; */
+        /* * Row is the default */
+        /* flex-direction: row; */
+        /* flex-direction: row-reverse; */
+
+        /* flex-wrap: wrap; */
+        /* will wrap at the same time reverse. */
+        /* flex-wrap: wrap-reverse; */
+
+        /* flex-flow can also be use instead of [flex-direction] AND [flex-wrap] */
+        /* flex-flow: row wrap; */
+
+    }
+    
+    .item{
+        background: rgb(238, 255, 0);
+        border: #ccc solid 1px;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.8rem;
+        /* * it will make all the items all equal in widths */
+        flex: 1;
+    }
+
+    .item:first-child{
+        flex: 3;
+    }
+
+</style>
+<body>
+    <div id="container">
+        <div class="item">
+            <h2>Item 1</h2>
+        </div>
+        <div class="item">
+            <h2>Item 2</h2>
+        </div>
+        <div class="item">
+            <h2>Item 3</h2>
+        </div>
+        <div class="item">
+            <h2>Item 4</h2>
+        </div>
+        <div class="item">
+            <h2>Item 5</h2>
+        </div>
+        <div class="item">
+            <h2>Item 6</h2>
+        </div>
+        <div class="item">
+            <h2>Item 7</h2>
+        </div>
+        <div class="item">
+            <h2>Item 8</h2>
+        </div>
+        <div class="item">
+            <h2>Item 9</h2>
+        </div>
+        <div class="item">
+            <h2>Item 10</h2>
+        </div>
+        <div class="item">
+            <h2>Item 11</h2>
+        </div>
+        <div class="item">
+            <h2>Item 12</h2>
+        </div>
+        <div class="item">
+            <h2>Item 13</h2>
+        </div>
+        <div class="item">
+            <h2>Item 14</h2>
+        </div>
+        <div class="item">
+            <h2>Item 16</h2>
+        </div>
+        <div class="item">
+            <h2>Item 17</h2>
+        </div>
+        <div class="item">
+            <h2>Item 18</h2>
+        </div>
+    </div>
+
+    
+</body>
+</html>

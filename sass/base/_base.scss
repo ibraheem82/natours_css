@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+/* ! next */
+html{
+     /*  1rem => 10px */
+     /* ! converting to rem just require dividing the px by 10 px / 10 */
+     /* ! we can also use em but it requires alot of calculations */
+     /* by doing this we have removed the ability of people that cant see properly they can no  */
+     /* the default font-size when the user does not change anything is (16px) */
+     /* * will translate to the percentage giving by the browser. */
+    /* font-size: 10px; */
+    /* * what we want divided by 16 */
+    /* * because 16px is the default font-size by the browser. and we want 10px. */
+    /* ! 10 / 16  = 0.625 which is 62.5% meaning -> .625 *16 = 10 */
+    /* * by using this method we are allowing the user to zoom in automatically. */
+    /* * putting 100% here means that the root font-size is 16px if the user does not change anything in the browser. */
+    /* font-size: 100%; */
+
+    // * it defines what 1rem is
+    font-size: 62.5%; 
+    
+}
+
+body{
+    // font-family: "Lato", sans-serif;
+    // font-weight: 400;
+    /* font-size: 16px; */
+    // line-height: 1.7;
+    // color: $color-gray-dark;
+    // padding: 3rem;
+    box-sizing: border-box;
+
+}
