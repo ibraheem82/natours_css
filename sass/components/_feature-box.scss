@@ -1,0 +1,26 @@
+.feature-box{
+    // want 80% of it to be white.
+    background-color: rgba($color-white, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-white, .8);
+    // * because we are animating just one property
+    transition: transform .3s;
+    &__icon{
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        // want it to go from one side to another.
+        // * we are able to acheive this because the icon font is text
+        display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    }
+
+    &:hover{
+        // * will move up when we hover it.
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
