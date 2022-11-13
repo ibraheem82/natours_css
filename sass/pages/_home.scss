@@ -12,4 +12,22 @@
     rgba($color-primary-light, 0.8)),
     url("../img/nat-4.jpg");
     background-size: cover;
+
+    // * skewing in order to cut out some part, somehow simplar to the clip-path property
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+
+    // * direct child selector.
+    // * selecting all the direct child, universal selector (*).
+    // selecting everything that is a direct child of the [section-features] box.
+
+
+    // .section-features > * -> selecting all the direct childs which is the (rows)
+    // .section-features * -> will select all the child or all the children elements.
+    & > *{
+        transform: skewY(7deg);
+    }
+
+
 }
