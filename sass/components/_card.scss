@@ -1,0 +1,42 @@
+// .card{
+    // define the propective
+//     perspective: 150rem;
+    // is not yet implemented in all browsers
+//     -moz-perspective: 150rem ;
+
+//     background-color: orangered;
+//     height: 50rem;
+//     transition: all 1s;
+
+//     &:hover{
+//         transform: rotateY(180deg);
+//     }
+// }
+
+
+.card{
+    // define the propective
+    // we want to turn it as if it is in the front of the client.
+    // without using prespective it wont turn the normal way.
+    // the lower value the higher the dramatic turning
+    // alot of experiments has to been to donw in order to implement it
+    perspective: 150rem;
+    // is not yet implemented in all browsers
+    -moz-perspective: 150rem;
+
+
+    &__side{
+        background-color: orangered;
+        color: #fff;
+        font-size: 3rem;
+        height: 50rem;
+        transition: all 2s;
+    }
+  
+// * when we hover on the card we want the side to transform.
+
+//  .card:hover .card__side
+    &:hover  &__side{
+        transform: rotateY(180deg);
+    }
+}
