@@ -23,6 +23,8 @@
     perspective: 150rem;
     // is not yet implemented in all browsers
     -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
 
 
     &__side{
@@ -30,13 +32,46 @@
         color: #fff;
         font-size: 3rem;
         height: 50rem;
-        transition: all 2s;
+        // transition: all .8s;
+        // * part of the [transition timing function]
+        transition: all .8s;
+        // todo -> after [front and back] testing.
+        // they start fitting to there width.
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        // * when it set to [ hidden ] it hide the backpart of an element.
+        backface-visibility: hidden;
+        // * all the elements are taking out of there natural flow.
+
+        &--front{
+            // background-color: purple;
+            background-color: $color-white;
+        }
+
+        // before we rotate the card this back side is already flipped, i.e it is already at 180%
+        &--back{
+            background-color: green;
+            transform: rotateY(180deg); 
+        }
     }
   
 // * when we hover on the card we want the side to transform.
 
 //  .card:hover .card__side
-    &:hover  &__side{
+    // &:hover  &__side{
+    //     transform: rotateY(180deg);
+    // }
+
+    // because the only the front side rotate
+    // * Hovering on the whole card
+    &:hover  &__side--front{
         transform: rotateY(180deg);
+    }
+
+    // if it is at 180deg, it will have to go back to zero.
+    &:hover  &__side--back{
+        transform: rotateY(0);
     }
 }
