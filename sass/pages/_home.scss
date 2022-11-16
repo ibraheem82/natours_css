@@ -25,7 +25,7 @@
 
     // .section-features > * -> selecting all the direct childs which is the (rows)
     // .section-features * -> will select all the child or all the children elements.
-    & > *{
+    & > * {
         transform: skewY(7deg);
     }
 
