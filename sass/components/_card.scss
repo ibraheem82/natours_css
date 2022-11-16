@@ -28,13 +28,14 @@
 
 
     &__side{
-        background-color: orangered;
+        // background-color: orangered;
         color: #fff;
         font-size: 3rem;
         height: 50rem;
         // transition: all .8s;
-        // * part of the [transition timing function]
-        transition: all .8s;
+        // * part of the [ transition timing function ]
+        // * [ease] will make the animation look more smoother. 
+        transition: all .8s ease;
         // todo -> after [front and back] testing.
         // they start fitting to there width.
         position: absolute;
