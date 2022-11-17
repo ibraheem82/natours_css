@@ -24,18 +24,23 @@
     // is not yet implemented in all browsers
     -moz-perspective: 150rem;
     position: relative;
-    height: 50rem;
+    height: 52rem;
 
 
     &__side{
         // background-color: orangered;
-        color: #fff;
-        font-size: 3rem;
-        height: 50rem;
+        // color: #fff;
+        // font-size: 3rem;
+        height: 52rem;
         // transition: all .8s;
         // * part of the [ transition timing function ]
         // * [ease] will make the animation look more smoother. 
+        // transition: all .8s ease;
+        // ! [NOTICED]
+        // ! [error] in rotating.
+        // transition: all 8s ease;
         transition: all .8s ease;
+        
         // todo -> after [front and back] testing.
         // they start fitting to there width.
         position: absolute;
@@ -44,11 +49,13 @@
         width: 100%;
         // * when it set to [ hidden ] it hide the backpart of an element.
         backface-visibility: hidden;
-
-        // ! after [&-1] 
         border-radius: 3px;
+
+        // * IMAGE OVERFLOWING
+        overflow: hidden;
+
         // * [0] -> x, [4rem] -> blur, 
-        box-shadow: 0, 1.5rem 4rem rgba($color-black, .15);
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
         // * all the elements are taking out of there natural flow.
 
@@ -61,8 +68,7 @@
         &--back{
             // background-color: green;
             transform: rotateY(180deg);
-            // TODO -> after completing the color  variables and the likes, add another modifier to the html,
-            // todo -> test back before doing this.
+
             &-1{
                 // going to the right bottom corner.
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -80,11 +86,89 @@
     // because the only the front side rotate
     // * Hovering on the whole card
     &:hover  &__side--front{
-        transform: rotateY(180deg);
+        // ! [NOTICED]
+        // transform: rotateY(180deg);
+        transform: rotateY(-180deg);
     }
 
     // if it is at 180deg, it will have to go back to zero.
     &:hover  &__side--back{
         transform: rotateY(0);
+    }
+
+    // * FRONT SIDE STYLING.
+    &__picture {
+        // todo -> after writing the first modifier
+        background-size: cover;
+        // due to experimentation
+        height: 23rem;
+        // background-blend ->  describes how the background element propertise should blend
+        // similar to the one in photoshop,
+        background-blend-mode: screen;
+        // [100%] -> x direction, [0] -> y direction, [100%] -> x direction, [85%] -> y direction, [0] -> x direction, [100%] -> y direction
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        // ? the rounded border is no longer been added.
+
+        // TODO -> AFTER border-radius, in &__side
+            &--1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+            }
+
+            &--2{
+                background-image: url(../img/nat-5.jpg);
+            }
+
+            &--3{
+                background-image: url(../img/nat-5.jpg);
+            }
+    }
+
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        // TODO -> Remove the testing stuff [font, color] in &__side
+        position: absolute;
+        top: 12rem;
+        // todo -> align text
+        right: 2rem;
+        // after &--1 -> styling
+        width: 75%;
+
+    }
+
+    &__heading-span{
+        padding: 1rem 1.5rem;
+        // to make it work in google chrome
+        // will apply the padding to all the part sides
+        -webkit-box-decoration-break: clone;
+        &--1{
+            background: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+        }
+    }
+
+    &__details{
+        // after not:last-child.
+        padding: 3rem;
+        ul{
+            list-style: none;
+            width: 80%;
+            // after padding &__details
+            // * in order just to center everything.
+            margin: 0 auto;
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
+
     }
 }
