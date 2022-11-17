@@ -44,6 +44,12 @@
         width: 100%;
         // * when it set to [ hidden ] it hide the backpart of an element.
         backface-visibility: hidden;
+
+        // ! after [&-1] 
+        border-radius: 3px;
+        // * [0] -> x, [4rem] -> blur, 
+        box-shadow: 0, 1.5rem 4rem rgba($color-black, .15);
+
         // * all the elements are taking out of there natural flow.
 
         &--front{
@@ -53,8 +59,14 @@
 
         // before we rotate the card this back side is already flipped, i.e it is already at 180%
         &--back{
-            background-color: green;
-            transform: rotateY(180deg); 
+            // background-color: green;
+            transform: rotateY(180deg);
+            // TODO -> after completing the color  variables and the likes, add another modifier to the html,
+            // todo -> test back before doing this.
+            &-1{
+                // going to the right bottom corner.
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
         }
     }
   
