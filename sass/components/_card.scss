@@ -145,6 +145,7 @@
         // to make it work in google chrome
         // will apply the padding to all the part sides
         -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
         &--1{
             background: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
         }
