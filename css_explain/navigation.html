@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation styling</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background: #4c6;
+            border-radius: 5px;
+            /* because of background  that is not showning */
+            overflow: auto;
+        }
+
+
+        /* They should be side by side. */
+        .navbar li{
+            float: left;
+        }
+
+        .navbar li a{
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+        }
+
+        .navbar li a:hover{
+            background: #3a9b52ce;
+            color: #f4f4f4;
+        }
+
+
+
+
+
+
+
+
+        /* ******************************************************************************* */
+
+            /*  Side menu first */
+        .side-menu{
+            list-style: none;
+            border: 1px #ddd solid;
+            border-radius: 10px;
+            width: 300px;
+            /* By default unordered list have 40px padding on the left. */
+            /* -> [padding: 20px] will overwrite it. */
+            padding: 20px;
+        }
+
+
+        .side-menu li{
+            font-size: 20px;
+            line-height: 2.4em;
+            border-bottom: dotted 1px #ddd;
+        }
+
+        .side-menu li:last-child{
+            border: none;
+        }
+
+        .side-menu li a{
+            color: #333333;
+            text-decoration: none;
+        }
+
+        .side-menu li a:hover{
+            color: rgb(191, 66, 191);
+        }
+
+
+    </style>
+
+
+<ul class="navbar">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+<br><br>
+
+
+<ul class="side-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+
+
+</body>
+</html>
