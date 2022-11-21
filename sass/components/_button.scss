@@ -32,12 +32,23 @@
 // * will translate to btn--white
 &--white{
     background-color: $color-white;
-    // color: #777;
      color: $color-gray-dark;
+
      &::after{
     background-color: $color-white;
     color: $color-gray-dark;
+    }
 }
+
+
+&--green{
+    background-color: $color-primary;
+     color: $color-white;
+    //  check -> [.section-tours]
+
+     &::after{
+    background-color: $color-primary;
+    }
 }
 
 &::after{
