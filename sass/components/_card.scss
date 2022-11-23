@@ -13,11 +13,9 @@
 
     &__side{
         height: 52rem;
-        // transition: all .8s;
+        
         // * part of the [ transition timing function ]
         // * [ease] will make the animation look more smoother. 
-        // transition: all .8s ease;
-        // transition: all 8s ease;
         transition: all .8s ease;
 
         // they start fitting to there width.
@@ -98,6 +96,7 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         // ? the rounded border is no longer been added.
+        //* card__picture--1
             &--1{
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
             }
@@ -117,12 +116,9 @@
         text-transform: uppercase;
         text-align: right;
         color: $color-white;
-        // TODO -> Remove the testing stuff [font, color] in &__side
         position: absolute;
         top: 12rem;
-        // todo -> align text
         right: 2rem;
-        // after &--1 -> styling
         width: 75%;
 
     }
@@ -167,41 +163,28 @@
         }
 
     }
-
-    // * FRONT SIDE STYLING.
     &__cta{
         position: absolute;
         // Moving from the parent element from right and left.
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        // ! [STOP]
-
-
-    // todo -> after price-box
         width: 90%;
-    // todo -> after __cta [width: 90%;]
         text-align: center;
     }
-
-    // todo -> after price-only
     &__price-box{
         text-align: center;
         color: $color-white;
         margin-bottom: 8rem;
-
     }
 
-    // todo -> after price-value
     &__price-only{
         font-size: 1.4rem;
         text-transform: uppercase;
     }
 
-    // todo -> after cta
     &__price-value{
         font-size: 6rem;
         font-weight: 100;
-
     }
 }
