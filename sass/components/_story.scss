@@ -5,4 +5,121 @@
     background-color: $color-white;
     border-radius: 3px;
     padding: 6rem;
+        
+    //  todo -> after transform: translateX(-3rem);
+    // 6 + the 3 
+    padding-left: 6rem;
+    // * paragraph will inherit this
+    font-size: $default-font-size;
+
+    //  todo -> after &__img = styling
+    // transform: skewX(12deg);
+    transform: skewX(-12deg);
+
+    // will select the shape and the &__text
+    // to stop how it bending.
+
+    & > * {
+    transform: skewX(12deg);
+    }
+
+
+
+
+
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        // todo -> remove background color after adding the image
+        // background-color: orangered;
+
+        // in order to make the rest of the content flow around it.
+        float: left;
+        // the radius wiil be the half of the width and height of the element, which 7.5rem, in order to get the diameter and at the same time the center of the circle.
+        //* in order for it to work it must be floated.
+        // it must be floated, have height and width
+        // working with in safari
+        // not working in [ie], [firefox] [edge]
+        // it defines outside where the content flows around the element
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+
+        // in order for us to make it look like that circle.
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+
+        // to move it away from the text
+        // transform: translateX(-3rem);
+        transform: translateX(-3rem) skewX(12deg);
+
+
+
+    //  todo -> after :  &__caption{
+        position: relative;
+
+    }
+
+    &__img{
+        // because the image is inside the shape. which is the 100% of the parent.
+        height: 100%;
+        // width: 100%;
+
+        // todo => after:  backface-visibility: hidden  and hover stuff;
+        // to make the image be at the ecnter
+        // transform: translateX(-4rem);
+        transform: translateX(-4rem) scale(1.4);
+
+
+        // todo => after:   &:hover &__img
+        backface-visibility: hidden;
+
+        transition: all .5s;
+
+    }
+
+    //  todo -> after   & > * {
+    //     transform: skewX(12deg);
+    //     }
+
+    &__text{
+        transform: skewX(12deg);
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // transform: translate(-50%, -50%);
+        transform: translate(-50%, 20%);
+        // transform: translate(-50%, 0%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        // after :  text-align: center;
+        // text will not display
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    // * as soon as the story is hovered 
+    &:hover &__caption{
+        // to make the text display
+        opacity: 1;
+        // TO CENTER IT
+        transform: translate(-50%, -50%);
+    }
+
+
+    // todo => after: transform: translateX(-4rem);
+    &:hover &__img{
+        transform: translateX(-4rem) scale(1);
+        // value lower than 100% make it darker, while above makes it brighter
+        filter: blur(3px) brightness(80%);
+
+    }
+
 }
+
