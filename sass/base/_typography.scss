@@ -43,6 +43,7 @@ body{
     // * meaning that it will clip the background, the linear-gradient to the text to fit in.
     // [-webkit-background-clip] brand new css property.
     -webkit-background-clip: text;
+     background-clip: text;
     color: transparent;
     letter-spacing: .3rem;
     transition: all .2s;
