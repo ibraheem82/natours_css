@@ -282,11 +282,17 @@
 <section class="section-stories">
  <!-- todo -> Last element to be written
                                 <!-- ! dont write  -->
+
+                                <!-- TODO -> CREATE A COMPONENT FOR IT. -->
                 <div class="bg-video">
-                        <video class="bg-video__content">
+                        <video class="bg-video__content"  autoplay muted loop>
                                 <!-- ! video is different from image  src=""  -->
+                                <!-- <source  src="img/video.mp4" type="video/mp4"> -->
                                 <source  src="img/video.mp4" type="video/mp4">
+                                <!-- may not work on ie 8 or 9 probaly in all old browsers -->
                                 <source  src="img/video.webm" type="video/webm">
+                                <!-- what will happen if none of this can't be played, then the text will show in the browser instead of the text. -->
+                                Your browser is not supported
                         </video>
                 </div>
 
