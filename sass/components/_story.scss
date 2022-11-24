@@ -2,7 +2,13 @@
     width: 75%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    background-color: $color-white;
+
+    
+    // background-color: $color-white;
+    // TODO -> fix overflowing of the image.
+    background-color: rgba($color-white, .6);
+
+
     border-radius: 3px;
     padding: 6rem;
         
@@ -42,7 +48,7 @@
         // working with in safari
         // not working in [ie], [firefox] [edge]
         // it defines outside where the content flows around the element
-        -webkit-shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);  
         shape-outside: circle(50% at 50% 50%);
 
         // in order for us to make it look like that circle.
