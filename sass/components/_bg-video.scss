@@ -1,0 +1,35 @@
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    // set parent element to position relative.
+
+
+    // remove backkground-color in stories-section in home.
+    z-index: -1;
+
+
+
+    // After removing backkground-color in stories-section in home.
+    // todo -> use rgba in _story.scss to make the shadow show on the card.
+    opacity: .15;
+
+
+    // After object-fit: cover;
+    overflow: hidden;
+
+
+    &__content{
+        height: 100%;
+        width: 100%;
+        // * in order to maintain the aspect ratio of the video.
+        // also similar to background-size -> cover
+        // * it will fill the parent element while still maintaining the aspect-ratio and the part of the video that doesnt fit the parent element will me cut off.
+        // it works with html elements or video in this case.
+        object-fit: cover;
+
+    }
+
+}
