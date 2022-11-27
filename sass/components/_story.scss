@@ -4,22 +4,21 @@
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
 
     
-    // background-color: $color-white;
-    // TODO -> fix overflowing of the image.
+ 
     background-color: rgba($color-white, .6);
 
 
     border-radius: 3px;
     padding: 6rem;
         
-    //  todo -> after transform: translateX(-3rem);
+   
     // 6 + the 3 
     padding-left: 6rem;
     // * paragraph will inherit this
     font-size: $default-font-size;
 
-    //  todo -> after &__img = styling
-    // transform: skewX(12deg);
+
+   
     transform: skewX(-12deg);
 
     // will select the shape and the &__text
@@ -37,8 +36,7 @@
     &__shape{
         width: 15rem;
         height: 15rem;
-        // todo -> remove background color after adding the image
-        // background-color: orangered;
+       
 
         // in order to make the rest of the content flow around it.
         float: left;
@@ -61,7 +59,6 @@
 
 
 
-    //  todo -> after :  &__caption{
         position: relative;
 
     }
@@ -71,22 +68,18 @@
         height: 100%;
         // width: 100%;
 
-        // todo => after:  backface-visibility: hidden  and hover stuff;
+
         // to make the image be at the ecnter
-        // transform: translateX(-4rem);
         transform: translateX(-4rem) scale(1.4);
 
 
-        // todo => after:   &:hover &__img
         backface-visibility: hidden;
 
         transition: all .5s;
 
     }
 
-    //  todo -> after   & > * {
-    //     transform: skewX(12deg);
-    //     }
+ 
 
     &__text{
         transform: skewX(12deg);
@@ -119,7 +112,6 @@
     }
 
 
-    // todo => after: transform: translateX(-4rem);
     &:hover &__img{
         transform: translateX(-4rem) scale(1);
         // value lower than 100% make it darker, while above makes it brighter
