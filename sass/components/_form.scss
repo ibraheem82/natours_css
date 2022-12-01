@@ -1,15 +1,11 @@
-.form{
+.form {
+  // except the last on
+  // * [2]
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
-    // except the last on
-    // * [2]
-    &__group:not(:last-child){
-        margin-bottom: 2rem;
-
-    }
-
-    // * [1]
-    &__input{
-    // * [1]
+  &__input {
     font-size: 1.5rem;
     // * will inherit the parent font-family.
     // * All elements inherit the font-family except the [input] element, that why we are settting manually.
@@ -18,67 +14,56 @@
     color: inherit;
     padding: 1.2rem 2rem;
     border-radius: 2px;
-    background-color: rgba($color-white, .5);
+    background-color: rgba($color-white, 0.5);
     border: none;
-// todo -> after:  border-bottom: 3px 
-//  * using because of the 3px border we specified before, just to stop the lable from moving down when the user click on the input.
-// * it will be invisible.
+
+    //  * using because of the 3px border we specified before, just to stop the lable from moving down when the user click on the input.
+    // * it will be invisible.
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
 
-
-      // * [3]
-      &:focus{
-        outline: none;
-        // * for accessability reason.
-        box-shadow: 0 1rem 2rem rgba($color-black, .1);
-        border-bottom: 3px solid $color-primary;
+    &:focus {
+      outline: none;
+      // * for accessability reason.
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
     }
 
-      // * [5]
     //   * Just a browser validation of the form.
     // * when the text you are writing is invalid
-    &:focus:invalid{
-        border-bottom: 3px solid $color-secondary-dark;
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
     }
 
-    // todo -> after: display: block;
-      // * [4]
-// * [::] stands for the thing that is on the webpage.
-// * because it is inside the form input.
-&::-webkit-input-placeholder{
-    // TODO -> CREATE A COLOR VARIABLE [color-gray-dark-2]
-    color: $color-gray-dark-2
-}
+    // * [::] stands for the thing that is on the webpage.
+    // * because it is inside the form input.
+    &::-webkit-input-placeholder {
+      color: $color-gray-dark-2;
     }
+  }
 
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
 
+    transition: all 0.3s;
+  }
 
-    &__label{
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-left: 2rem;
-        margin-top: .7rem;
-        display: block;
+  //   * when the placeholder is shown which means when we have not written  anything in the input, we want the lable to be hidden .
+  // * [+] selecting the adjacent siblings selector.
 
-        transition: all .3s;
-    }
+  // ! we want to make sure that the [label] does'nt show.
 
-      // * [6]
-    //   * when the placeholder is shown which means when we have not written  anything in the input, we want the lable to be hidden .
-    // * [+] selecting the adjacent siblings selector.
-    
-    // ! we want to make sure that the [label] does'nt show.
-
-    // * as soon as we start writing the [placeholder] should be gone, and the label comes back.
-    &__input:placeholder-shown + &__label{
-        // * using opacity because we want to animate the effect.
-        opacity: 0;
-        visibility: hidden;
-        // * when you start writing it should come from the top.
-        transform: translateY(-4rem);
-    }
-
-
+  // * as soon as we start writing the [placeholder] should be gone, and the label comes back.
+  &__input:placeholder-shown + &__label {
+    // * using opacity because we want to animate the effect.
+    opacity: 0;
+    visibility: hidden;
+    // * when you start writing it should come from the top.
+    transform: translateY(-4rem);
+  }
 }
