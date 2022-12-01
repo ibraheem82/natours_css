@@ -1,6 +1,6 @@
 .form {
   // except the last on
-  // * [2]
+
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -16,6 +16,7 @@
     border-radius: 2px;
     background-color: rgba($color-white, 0.5);
     border: none;
+    transition: all 0.3s;
 
     //  * using because of the 3px border we specified before, just to stop the lable from moving down when the user click on the input.
     // * it will be invisible.
