@@ -67,4 +67,57 @@
     // * when you start writing it should come from the top.
     transform: translateY(-4rem);
   }
+  &__radio-group {
+    // width: 50%;
+    // * better than using float
+    width: 49%;
+    // so they dont create line breaks, be displayed side-by-side.
+    display: inline-block;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    // want it to become a circle
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    // make it completely round.
+    border-radius: 50%;
+    // will work if use ( block or inline-block ).
+    // * but inline block is a better option
+    // display: block;
+    display: inline-block;
+    // to put it exactly where we want it to be.
+    position: absolute;
+    left: 0;
+    // to move it up
+    top: -0.4rem;
+
+    //  after ->  form__radio-button
+    &::after {
+      // * Anytime you use a pesudo element you should always specify the content property
+      //   just to add the littel dot even though it is not visible immediatly.
+      content: "";
+      display: block;
+      //   in order to make the little dot show.
+      height: 1.3rem;
+      width: 1.3rem;
+      //   make the little dot round
+      border-radius: 50%;
+      //   we want it to be positioned at the center or the other circle.
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      //   to position the dot at the center of the circle.
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+      opacity: 0;
+    }
+  }
 }
