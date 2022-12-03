@@ -120,4 +120,11 @@
       opacity: 0;
     }
   }
+// * selecting all the radio inputs which are checked. 
+// want to manipulate the radio-button
+// [~] -> seleting the sibling
+// ! [complicated] and [logical].
+  &__radio-input:checked ~ &__radio-label &__radio-button::after{
+
+  }
 }
