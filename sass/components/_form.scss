@@ -75,6 +75,10 @@
     display: inline-block;
   }
 
+  &__radio-input{
+    display: none;
+  }
+
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
@@ -118,13 +122,15 @@
       transform: translate(-50%, -50%);
       background-color: $color-primary;
       opacity: 0;
+      transition: opacity .2s;
     }
   }
 // * selecting all the radio inputs which are checked. 
 // want to manipulate the radio-button
 // [~] -> seleting the sibling
+// * same thing works for the check-box
 // ! [complicated] and [logical].
   &__radio-input:checked ~ &__radio-label &__radio-button::after{
-
+    opacity: 1;
   }
 }
