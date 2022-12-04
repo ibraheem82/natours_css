@@ -1,4 +1,7 @@
 .btn{
+    // [&] -> will translate into a button.
+    // * [&]  -> at the same time selecting the (btn) class.
+&,
 &:link,
 &:visited{
     text-transform: uppercase;
@@ -12,6 +15,11 @@
     /* ! stop */
     font-size: $default-font-size;
     // font-size: 1.6rem;
+
+    // ** Change for button
+    // button by default comes with a border.
+    border: none;
+    cursor: pointer;
 }
 
     &:hover{
@@ -24,7 +32,10 @@
 }
 }
 
-&:active{
+&:active,
+    // [focus] will look the same as the hover does.
+    &:focus{
+        outline: none;
     transform: translateY(-1px);
     box-shadow: 0 .5rem 10rem rgba($color-black, .2);
 }
