@@ -1,3 +1,40 @@
 .navigation{
-    
+    &__checkbox{
+
+    }
+
+        // ! [2] ->
+    &__button{
+
+    }
+
+        // ! [1] ->
+    &__background{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 6.5rem;
+        // to make it be at the corner
+        right: 6.5;
+        // it starts in the middle of an element, and goes outside in the outter direction
+        background-image: radial-gradient($color-primary, $color-black);
+    }
+
+
+    &__nav{
+
+    }
+
+    &__list{
+
+    }
+
+    &__item{
+
+    }
+
+    &__link{
+
+    }
 }
