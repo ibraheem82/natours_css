@@ -15,6 +15,8 @@
         z-index: 2000;
 
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        text-align: center;
+        cursor: pointer;
 
     }
 
@@ -105,7 +107,7 @@
             transform: translateX(1rem);
         }
     }
-
+// * CHECKBOX -> FUNCTIONALITY
     &__checkbox:checked ~ &__background{
         transform: scale(80);
     }
@@ -114,4 +116,71 @@
         opacity: 1;
         width: 100%;
     }
+
+
+    // ICON
+    &__icon{
+        position: relative;
+        margin-top: 3.5rem;
+        &,
+        &::before,
+        &::after{
+            width: 3rem;
+            height: 2px;
+            background-color: $color-gray-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            // transition: all 2s;
+        }
+
+        // * [translate] can also be use to make it push to the top.
+        &::before{
+            // to move it up
+            top: -.8rem;
+            // sometimes it can be useful
+            // * it describes where the transformations happens.
+            // transform-origin: right;
+        }
+
+        &::after{
+            top: .8rem;
+        }
+    }
+// selecting the child element.
+    &__button:hover &__icon::before{
+        top: -1rem;
+    }
+
+     &__button:hover &__icon::after{
+        top: 1rem;
+    }
+
+    // when the checkbox is checked we want the bars to cross, by selecting the button because it is a adjacent siblings
+    &__checkbox:checked + &__button &__icon{
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before{
+        top: 0;
+    //    transform: rotate(45deg);
+    // * [ 360 / 2 ] -> 180
+    // * [180 - 45] -> 135
+       transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after{
+        top: 0;
+        // transform: rotate(-45deg);
+        // * [ 360 / 2 ] -> 180
+        // * [180 - 45] -> 135
+        transform: rotate(-135deg);
+    }
+
 }
