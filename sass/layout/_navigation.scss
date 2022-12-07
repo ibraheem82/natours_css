@@ -3,7 +3,7 @@
         display: none;
     }
 
-        // ! [2] ->
+
     &__button{
         background-color: $color-white;
         height: 7rem;
@@ -14,9 +14,10 @@
         border-radius: 50%;
         z-index: 2000;
 
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+
     }
 
-        // ! [1] ->
     &__background{
         height: 6rem;
         width: 6rem;
@@ -28,21 +29,34 @@
         // it starts in the middle of an element, and goes outside in the outter direction
         background-image: radial-gradient($color-primary, $color-black);
         z-index: 1000;
+        // Custom animation function
+        // * it specify how much changes occurs over time. [easeInOutCirc]
+        // can be used instead of 
+        transition: transform .8s cubic-bezier(0.85, 0, 0.15, 1);
 
-        transform: scale(80);
+
+        // ! testing
+        // transform: scale(80);
     }
 
 
     &__nav{
         height: 100vh;
-        width: 100%;
         position: fixed;
         top: 0;
         // left can also be used here.
-        right: 0;
+        left: 0;
+        // background-color: orangered;
+        // right: 0;
         z-index: 1500;
+
+        // want to make sure that the navigation has no width.
+        opacity: 0;
+        width: 0;
+        // [ easeInOutBack ]
+        transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
-        // ! [3] ->
+
     &__list{
         position: absolute;
         top: 50%;
@@ -50,13 +64,14 @@
         transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
+        width: 100%;
     }
 
     &__item{
         margin: 1rem;
     }
 
-        // ! [4] ->
+
 
     &__link{
         &:link,
@@ -89,5 +104,14 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
+    }
+
+    &__checkbox:checked ~ &__background{
+        transform: scale(80);
+    }
+
+     &__checkbox:checked ~ &__nav{
+        opacity: 1;
+        width: 100%;
     }
 }
