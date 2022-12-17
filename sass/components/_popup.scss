@@ -1,0 +1,67 @@
+.popup{
+    // will occupy the entire viewport
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    // * absolute positioning is taken out of the flow.
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 2000;
+    &__content{
+        @include absCenter;
+        width: 75%;
+        // height: 50rem;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .8);
+        border-radius: 3px;
+        // * the browser will automatically give them the same height.
+        display: table;
+        overflow: hidden;
+    }
+
+    &__left{
+        width: 33.333333%;
+        // float: left;
+        // * the browser will automatically give them the same height.
+        display: table-cell;
+    }
+
+    &__right{
+        width: 66.6666667%;
+        // float: left;
+        // * the browser will automatically give them the same height.
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+
+    &__img{
+        display: block;
+        width: 100%;
+    }
+
+    &__text{
+        // 14px
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        // * in order to use columns in css
+        -moz-column-count: 2;
+        // specifying the space that we want between the columns
+        // * 1em is always the current size of the element -> 14px 
+        -moz-column-gap: 4rem;
+        // to add borders to the column
+        -moz-column-count: 2;
+        -moz-column-rule: 1px solid $color-grey-light-2;
+
+
+        column-count: 2;
+        column-rule: 1px solid $color-grey-light-2;
+        column-gap: 4rem;
+       -moz-hyphens: auto;
+       -ms-hyphens: auto;
+       -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+}
