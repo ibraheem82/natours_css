@@ -48,7 +48,7 @@ html {
     }
 
 
-    @include respond {
+    @include respond(phone) {
         font-size: 50%;
     }
 
