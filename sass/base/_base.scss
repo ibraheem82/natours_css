@@ -33,15 +33,24 @@ html {
     // * media queries before.
 
     // @media (max-width: 600px) {
-    //         font-size: 50%;
+    //     font-size: 50%;
 
     // }
 
 
-    //     @media (max-width: 900px) {
+    // @media (max-width: 900px) {
 
-    //             font-size: 50%;
-    //     }
+    //     font-size: 50%;
+    // }
+
+    @include respond-phone {
+        font-size: 50%;
+    }
+
+
+    @include respond {
+        font-size: 50%;
+    }
 
 }
 

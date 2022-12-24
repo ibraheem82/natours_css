@@ -1,18 +1,49 @@
 @mixin clearfix {
-    // it will append a pseudo element, after the element which will then clear the float.
+  // it will append a pseudo element, after the element which will then clear the float.
 
-    &::after{
-        content: "";
-        // standard of clealfix.
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    // standard of clealfix.
+    display: table;
+    clear: both;
+  }
 }
 
- 
-@mixin absCenter{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// * MEDIA QUERY MANAGER.
+
+/*
+* 0  - 600px: Phone
+* 600  - 900px: Tablet portrait
+* 900  - 1200px: Tablet landscape
+* [1200 - 1800] is where our normal styles applies.
+* 1800px + : Big Desktop
+*/
+// * Probably for testing
+@mixin respond-phone {
+  // content directive  [@content] --> it allows us to pass a block of code into a mixin.
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+/*
+$breakpoints arguments choices:after
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
 }
