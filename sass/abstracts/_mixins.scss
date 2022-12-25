@@ -26,12 +26,12 @@
 * 1800px + : Big Desktop
 */
 // * Probably for testing
-@mixin respond-phone {
-  // content directive  [@content] --> it allows us to pass a block of code into a mixin.
-  @media (max-width: 600px) {
-    @content;
-  }
-}
+// @mixin respond-phone {
+// content directive  [@content] --> it allows us to pass a block of code into a mixin.
+//   @media (max-width: 600px) {
+//     @content;
+//   }
+// }
 
 /*
 $breakpoints arguments choices:after
@@ -40,29 +40,39 @@ $breakpoints arguments choices:after
 - tab-land
 - big-desktop
 */
+
+//   * EM works well in media queries
+// * 1em  = 16px
+// * will be adapted to the font size that the user sets for the browser.
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     // for width that are less or equal to 600px
-    @media (max-width: 600px) {
+    @media (max-width: 37.5em) {
+      // 600px
       @content;
     }
   }
 
   @if $breakpoint == tab-port {
-    @media (max-width: 900px) {
+    @media (max-width: 56.25em) {
+      // 900px
+
       @content;
     }
   }
 
   @if $breakpoint == tab-land {
-    @media (max-width: 1200px) {
+    @media (max-width: 75em) {
+      // 1200px
+
       @content;
     }
   }
 
   @if $breakpoint == big-desktop {
     // when the width is larger than 1800px +,
-    @media (min-width: 1800px) {
+    @media (min-width: 112.5em) {
+      // 1800px
       @content;
     }
   }

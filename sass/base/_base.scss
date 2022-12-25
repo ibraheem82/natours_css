@@ -41,20 +41,27 @@ html {
   //     font-size: 50%;
   //   }
 
-  @include respond(phone) {
+  //   @include respond(phone) {
+  // 1rem  = 10px; 10px / 16px = 62.5%
+  //     font-size: 50%;
+  //   }
+
+  //   width < 1200
+  @include respond(tab-land) {
+    // 1rem = 9px, 9 / 16 = 56.25%
+    font-size: 56.25%;
+    // font-size: 70%;
+  }
+
+  //   width < 900
+  @include respond(tab-port) {
+    // want 1rem = 8px, 8 / 16 = 50%
     font-size: 50%;
   }
 
-  @include respond(tab-port) {
-    font-size: 60%;
-  }
-
-  @include respond(tab-land) {
-    font-size: 70%;
-  }
-
   @include respond(big-desktop) {
-    font-size: 80%;
+    // 1rem = 12px, 12 / 16 = 75%
+    font-size: 75%;
   }
 }
 
