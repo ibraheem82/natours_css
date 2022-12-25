@@ -78,9 +78,19 @@ html {
     font-size: 50%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   html {
-    font-size: 50%;
+    font-size: 60%;
+  }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 80%;
   }
 }
 
