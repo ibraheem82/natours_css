@@ -6,7 +6,7 @@
 
     @include respond(tab-port) {
             padding: 8rem 0;
-        }
+    }
 
     &__logo-box{
         // because the image is an inline element.
@@ -26,6 +26,11 @@
         border-top: 1px solid $color-gray-dark;
         padding: 2rem;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list{
