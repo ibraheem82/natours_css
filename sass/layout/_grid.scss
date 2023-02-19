@@ -15,6 +15,10 @@
         }
     }
 
+
+        @include respond(tab-port) {
+            max-width: 50rem;
+        }
     // .row::after
     @include clearfix;
 
