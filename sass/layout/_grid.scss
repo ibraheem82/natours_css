@@ -24,6 +24,10 @@
         &:not(:last-child){
             margin-right: $gutter-horizontal;
         }
+
+        @include respond(tab-port) {
+            width: 100% !important; 
+        }
     }
 
 
