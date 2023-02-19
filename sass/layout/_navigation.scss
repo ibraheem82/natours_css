@@ -40,9 +40,10 @@
         // can be used instead of 
         transition: transform .8s cubic-bezier(0.85, 0, 0.15, 1);
 
-
-        // ! testing
-        // transform: scale(80);
+        @include respond(tab-port) {
+                top: 4.5rem;
+                right: 4.5rem;
+            }
     }
 
 
