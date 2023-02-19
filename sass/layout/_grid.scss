@@ -17,12 +17,14 @@
     // attribute selector
     // wanting the beginning to be what we have set before.
     [class^="col-"] {
-        //  background-color: #ff3399;
         float: left;
         padding: 1rem;
 
         &:not(:last-child){
             margin-right: $gutter-horizontal;
+            @include respond(tab-port) {
+                 margin-right: 0;
+                }
         }
 
         @include respond(tab-port) {
