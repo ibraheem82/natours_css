@@ -1,3 +1,5 @@
+/** @format */
+
 @mixin clearfix {
   // it will append a pseudo element, after the element which will then clear the float.
 
@@ -24,6 +26,8 @@
 * 900  - 1200px: Tablet landscape
 * [1200 - 1800] is where our normal styles applies.
 * 1800px + : Big Desktop
+
+* ORDER -> Base + typography > general layout + grid > page layout > components
 */
 // * Probably for testing
 // @mixin respond-phone {
