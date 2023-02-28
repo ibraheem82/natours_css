@@ -11,6 +11,10 @@
 
 .u-margin-bottom-big {
     margin-bottom: 8rem !important;
+
+    @include respond(tab-port) {
+            margin-bottom: 5rem;
+        }
 }
 
 .u-margin-top-big {
