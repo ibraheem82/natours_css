@@ -12,22 +12,39 @@
         // will give us space between the outline and the element inside the outline.
         outline-offset: 2rem;
 
+        @include respond(tab-port) {
+                float:left;
+                position: relative;
+                width: 33.33333333%;
+                box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
+            }
+
         &--p1{
             left: 0;
             // to move it upward.
             top: -2rem;
+            @include respond(tab-port) {
+                top: 0;
+            }
         }
 
 
         &--p2{
             right: 0;
             top: 2rem;
+            @include respond(tab-port) {
+                    top: 0;
+                }
         }
 
 
         &--p3{
             left:20%;
             top: 10rem;
+            @include respond(tab-port) {
+                    top: 0;
+                   left: 0;;
+                }
         }
 
         &:hover{
