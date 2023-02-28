@@ -34,7 +34,7 @@
             right: 0;
             top: 2rem;
             @include respond(tab-port) {
-                    top: 0;
+                    top: -1rem;
                     transform: translate(1.3);
                 }
         }
