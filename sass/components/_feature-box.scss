@@ -9,6 +9,10 @@
     // * because we are animating just one property
     transition: transform .3s;
     
+    @include respond(tab-port) {
+        padding: 2rem;
+
+    }
     &__icon{
         font-size: 6rem;
         margin-bottom: .5rem;
