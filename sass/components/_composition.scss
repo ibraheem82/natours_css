@@ -25,6 +25,7 @@
             top: -2rem;
             @include respond(tab-port) {
                 top: 0;
+                transform: translate(1.2);
             }
         }
 
@@ -34,6 +35,7 @@
             top: 2rem;
             @include respond(tab-port) {
                     top: 0;
+                    transform: translate(1.3);
                 }
         }
 
@@ -43,7 +45,8 @@
             top: 10rem;
             @include respond(tab-port) {
                     top: 0;
-                   left: 0;;
+                   left: 0;
+                transform: translate(1.1);
                 }
         }
 
