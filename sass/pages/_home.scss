@@ -96,7 +96,7 @@
     }
     
 
-        @include respond(tab-land) {
+        @include respond(tab-port) {
             background-image: linear-gradient(to right,
                         rgba($color-white, .9) 0%,
                         rgba($color-white, .9) 100%,),
@@ -109,6 +109,10 @@
 
         @include respond(tab-land) {
             width: 65%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
         }
     }
 
