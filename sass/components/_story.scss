@@ -67,10 +67,11 @@
         // to move it away from the text
         // transform: translateX(-3rem);
         transform: translateX(-3rem) skewX(12deg);
-
-
-
         position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
 
     }
 
