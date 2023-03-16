@@ -95,6 +95,11 @@
 
     &__text{
         transform: skewX(12deg);
+
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption{
