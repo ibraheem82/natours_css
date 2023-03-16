@@ -13,13 +13,24 @@
         
    
     // 6 + the 3 
-    padding-left: 6rem;
+    padding-left: 9rem;
     // * paragraph will inherit this
     font-size: $default-font-size;
 
 
    
     transform: skewX(-12deg);
+
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+        @include respond(phone) {
+           transform: skewX(0);
+    }
 
     // will select the shape and the &__text
     // to stop how it bending.
