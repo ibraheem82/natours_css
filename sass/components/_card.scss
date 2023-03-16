@@ -187,4 +187,62 @@
         font-size: 6rem;
         font-weight: 100;
     }
+
+    @include respond(tab-port) {
+            height: auto;
+            border-radius: 3px;
+            background-color: $color-white;
+            box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+            &__side {
+                height: auto;
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+                position: relative;
+                box-shadow:none;
+                
+        
+                // * IMAGE OVERFLOWING
+                overflow: hidden;
+        
+                // * all the elements are taking out of there natural flow.
+            
+        
+                // before we rotate the card this back side is already flipped, i.e it is already at 180%
+                &--back {
+                    // background-color: green;
+                    transform: rotateY(0);
+                }
+            }
+        
+            // because the only the front side rotate
+            // * Hovering on the whole card, and then the front side of the card we are hovering on, what should happen to it.
+            &:hover &__side--front {
+                transform: rotateY(0);
+            }
+
+            &__details{
+                padding: 1rem 3rem;
+            }
+        
+            &__cta {
+                position: relative;
+                // Moving from the parent element from right and left.
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
+                width: 100%;
+    
+                padding: 7rem 4rem 4rem 4rem;
+            }
+        
+            &__price-box {
+                margin-bottom: 3rem;
+            }
+        
+          
+        
+            &__price-value {
+                font-size: 4rem;
+            }
+    }
 }
